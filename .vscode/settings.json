@@ -1,0 +1,5 @@
+{
+  "rust-analyzer.server.extraEnv": {
+    "DATABASE_URL": "postgres://assignments:assignments@localhost:45432/assignments"
+  }
+}
