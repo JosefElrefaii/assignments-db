@@ -10,7 +10,7 @@ pub async fn assignments(conn: &mut PgConnection) -> Result<Vec<Assignment>, sql
   Ok(sqlx::query_as!(
     Assignment,
     r#"
-        SELECT * FROM regions
+        SELECT * FROM assignments
     "#
   )
   .fetch_all(conn)
