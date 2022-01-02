@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 sqlx = { version = "0.5.9", features = ["runtime-tokio-rustls", "postgres", "macros", "chrono", "uuid", "json", "migrate", "offline"] }
+uuid = { version = "0.8.2", features = ["serde"] }

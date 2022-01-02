@@ -5,3 +5,12 @@ CREATE TABLE assignments (
     description TEXT NOT NULL,
     git_url TEXT NOT NULL
 );
+
+CREATE table applicants (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    name TEXT UNIQUE NOT NULL,
+    assignment_id SERIAL NOT NULL,
+    git_url TEXT NOT NULL,
+
+    FOREIGN KEY (assignment_id) REFERENCES assignments(id)
+);
