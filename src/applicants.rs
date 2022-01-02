@@ -2,10 +2,10 @@ use sqlx::PgConnection;
 
 #[derive(Debug, Clone)]
 pub struct Applicant {
-  id: uuid::Uuid ,
-  name: String,
-  assignment_id: i32,
-  git_url: String
+  pub id: uuid::Uuid ,
+  pub name: String,
+  pub assignment_id: i32,
+  pub git_url: String
 }
 
 pub async fn applicant(conn: &mut PgConnection, id: uuid::Uuid) -> Result<Applicant, sqlx::Error> {
