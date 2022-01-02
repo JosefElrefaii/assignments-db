@@ -9,6 +9,18 @@ pub struct Assignment {
   pub git_url: String
 }
 
+pub async fn assignment(conn: &mut PgConnection, id: i32) -> Result<Assignment, sqlx::Error> {
+  Ok(sqlx::query_as!(
+    Assignment,
+    r#"
+        SELECT * FROM assignments WHERE id = $1
+    "#,
+    id
+  )
+  .fetch_one(conn)
+  .await?)
+}
+
 pub async fn assignments(conn: &mut PgConnection) -> Result<Vec<Assignment>, sqlx::Error> {
   Ok(sqlx::query_as!(
     Assignment,
