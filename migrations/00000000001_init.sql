@@ -6,7 +6,7 @@ CREATE TABLE assignments (
     git_url TEXT NOT NULL
 );
 
-CREATE table applicants (
+CREATE table applications (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     name TEXT UNIQUE NOT NULL,
     assignment_id SERIAL NOT NULL,

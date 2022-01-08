@@ -12,7 +12,7 @@ INSERT INTO assignments(
     'potato.git'
   );
 
-INSERT INTO applicants(
+INSERT INTO applications(
   id,
   name,
   assignment_id,

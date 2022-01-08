@@ -8,11 +8,11 @@ pub struct Applicant {
   pub git_url: String
 }
 
-pub async fn applicant(conn: &mut PgConnection, id: uuid::Uuid) -> Result<Applicant, sqlx::Error> {
+pub async fn application(conn: &mut PgConnection, id: uuid::Uuid) -> Result<Applicant, sqlx::Error> {
   Ok(sqlx::query_as!(
     Applicant,
     r#"
-        SELECT * FROM applicants WHERE id = $1
+        SELECT * FROM applications WHERE id = $1
     "#,
     id
   )
@@ -20,11 +20,11 @@ pub async fn applicant(conn: &mut PgConnection, id: uuid::Uuid) -> Result<Applic
   .await?)
 }
 
-pub async fn applicants(conn: &mut PgConnection) -> Result<Vec<Applicant>, sqlx::Error> {
+pub async fn applications(conn: &mut PgConnection) -> Result<Vec<Applicant>, sqlx::Error> {
   Ok(sqlx::query_as!(
     Applicant,
     r#"
-        SELECT * FROM applicants
+        SELECT * FROM applications
     "#
   )
   .fetch_all(conn)
