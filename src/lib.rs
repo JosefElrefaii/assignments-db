@@ -1,5 +1,5 @@
 pub mod assignments;
-pub mod applicants;
+pub mod applications;
 
 pub use assignments::*;
-pub use applicants::*;
+pub use applications::*;
