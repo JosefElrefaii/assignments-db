@@ -90,7 +90,6 @@ PGPASSWORD=$DB_PASSWORD psql -U $DB_USER -h localhost -p $DB_PORT $DB_NAME < sch
 
 ```bash
 PGPASSWORD=postgres psql -U postgres -h localhost -p $DB_PORT $DB_NAME <<EOF
-SELECT *
-            FROM regions;
+SELECT * FROM applications;
 EOF
 ```

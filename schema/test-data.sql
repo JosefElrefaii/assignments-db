@@ -16,10 +16,12 @@ INSERT INTO applications(
   id,
   name,
   assignment_id,
+  email,
   git_url
   ) VALUES (
     'e9231914-a669-4213-92e5-652af54507bc',
     'Josef Elrefai',
     1,
-    'some git url here'
+    'josef.elrefai@hotmail.com',
+    'some-git-url-here.git'
   );
